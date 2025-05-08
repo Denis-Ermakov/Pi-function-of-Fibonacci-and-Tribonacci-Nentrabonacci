@@ -4,3 +4,22 @@
 4 точки
 нужно будет подправить легенду в графиках первой ячейки и обновить соответствующее изображение в отчете: добавить Фибоначчи
 Ссылка на отчет в overleaf https://www.overleaf.com/project/6814b372ffbbcba7013d012e
+
+
+x = range(1, 10**deg_max, 10**deg_max // 10)
+    y = [Pi_func(i) / i for i in x]
+    y_Tetr = [Pi_func_Tetr(i) / i for i in x]
+    y_Fib = [Pi_func_Fib(i) / i for i in x]
+    
+    # Создаем DataFrame
+    data = {
+        "Граница диапазона": x,
+        "Доля простых чисел": y,
+        "Доля простых чисел Тетрабоначчи": y_Tetr,
+        "Доля простых чисел Фибоначчи": y_Fib
+    }
+
+    table = pd.DataFrame(data)
+    table = table.to_latex()
+    print(table)
+    #Чтобы табличку в латех загнать
